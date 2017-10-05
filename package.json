@@ -1,0 +1,95 @@
+{
+  "_from": "auto-changelog",
+  "_id": "auto-changelog@0.3.1",
+  "_inBundle": false,
+  "_integrity": "sha1-hUPPwchWGaJ0I+C+7ITpQkMdsjE=",
+  "_location": "/auto-changelog",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "auto-changelog",
+    "name": "auto-changelog",
+    "escapedName": "auto-changelog",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/auto-changelog/-/auto-changelog-0.3.1.tgz",
+  "_shasum": "8543cfc1c85619a27423e0beec84e942431db231",
+  "_spec": "auto-changelog",
+  "_where": "/Users/bartek/adludio/playwat",
+  "author": {
+    "name": "Pete Cook",
+    "email": "pete@cookpete.com",
+    "url": "http://github.com/cookpete"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "bin": {
+    "auto-changelog": "./lib/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/CookPete/auto-changelog/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "array.prototype.find": "^2.0.0",
+    "commander": "^2.9.0",
+    "parse-github-url": "^0.3.2",
+    "semver": "^5.1.0"
+  },
+  "deprecated": false,
+  "description": "Command line tool for generating a changelog from git tags and commit history",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.3.26",
+    "babel-eslint": "^6.0.3",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "chai": "^3.4.1",
+    "mocha": "^3.0.2",
+    "snazzy": "^4.0.0",
+    "standard": "^8.0.0"
+  },
+  "homepage": "https://github.com/CookPete/auto-changelog",
+  "keywords": [
+    "auto",
+    "automatic",
+    "changelog",
+    "change",
+    "log",
+    "generator",
+    "git",
+    "commit",
+    "commits",
+    "history"
+  ],
+  "license": "CC0-1.0",
+  "name": "auto-changelog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CookPete/auto-changelog.git"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "clean": "rm -rf lib",
+    "lint": "standard --verbose | snazzy",
+    "postpublish": "npm run clean",
+    "prepublish": "npm run build",
+    "preversion": "npm run lint && npm run test",
+    "test": "mocha test --compilers js:babel-core/register",
+    "version": "babel-node src/index.js --package --template compact; git add CHANGELOG.md"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "version": "0.3.1"
+}
